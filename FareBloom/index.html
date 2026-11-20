@@ -1,1 +1,117 @@
-<!-- FareBloom Commute Fare Calculator -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FareBloom - Commute Fare Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#a855f7">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>FareBloom ✿</h1>
+                <p>Your Daily Commute Companion</p>
+            </div>
+            <div class="logo">🚍</div>
+        </header>
+
+        <section class="summary">
+            <p>Today's Total Fare</p>
+            <h2 id="dailyTotal">₱0.00</h2>
+            <span>Track your daily transportation expenses</span>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3 id="totalRides">0</h3>
+                <p>Total Rides</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalExpenses">₱0.00</h3>
+                <p>Total Expenses</p>
+            </div>
+        </section>
+
+        <section class="stats">
+    <div class="stat-card">
+        <h3 id="weeklyExpenses">₱0.00</h3>
+        <p>Weekly Expenses</p>
+    </div>
+
+    <div class="stat-card">
+        <h3 id="monthlyExpenses">₱0.00</h3>
+        <p>Monthly Expenses</p>
+    </div>
+</section>
+
+        <section class="form-card">
+            <h2>＋ Add Commute Fare</h2>
+
+            <form id="fareForm">
+
+                <label>Date</label>
+                <input type="date" id="date" required>
+
+                <label>Transportation Type</label>
+                <select id="transport" required>
+                    <option value="">Select transportation</option>
+                    <option value="Jeepney">Jeepney</option>
+                    <option value="Tricycle">Tricycle</option>
+                    <option value="Bus">Bus</option>
+                    <option value="UV Express">UV Express</option>
+                    <option value="Train">Train</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>Route / Destination</label>
+                <input type="text" id="route"
+                    placeholder="Example: Home to School" required>
+
+                <label>Fare per Ride (₱)</label>
+                <input type="number" id="fare"
+                    placeholder="Enter fare" min="0.01"
+                    step="0.01" required>
+
+                <label>Number of Rides</label>
+                <input type="number" id="rides"
+                    placeholder="Enter number of rides"
+                    min="1" step="1" required>
+
+                <button type="submit">＋ Add Fare</button>
+
+            </form>
+
+            <div class="calculation">
+                <p>Calculated Fare</p>
+                <h2 id="calculatedFare">₱0.00</h2>
+            </div>
+        </section>
+
+        <section class="history-card">
+            <h2>♡ Commute History</h2>
+
+            <button type="button" id="exportButton">
+              
+                ↓ Export Commute History
+            </button>
+            
+            <div id="fareHistory">
+                <p class="empty">No commute records yet.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made with ♡ | FareBloom 2026</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
