@@ -4,7 +4,7 @@ async function loadProjects() {
     if (!container) return;
 
     // List of potential file naming paths to try automatically
-    const pathsToTry = ["data/project.json"];
+    const pathsToTry = ["project.json"];
     let response = null;
 
     for (const path of pathsToTry) {
